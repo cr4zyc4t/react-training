@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter';
 import Clock from './Clock';
+import Greeting from './Greeting';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -48,6 +49,9 @@ export default class App extends React.Component {
             <div style={{ flex: 1 }}>
               <button onClick={this.toggleClock}>Toggle Clock</button>
               {showClock ? <Clock /> : null}
+            </div>
+            <div style={{ flex: 1 }}>
+              <Greeting />
             </div>
           </div>
         </header>

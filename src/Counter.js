@@ -1,5 +1,4 @@
 import React from "react";
-import AutoFocusInput from "./AutoFocusInput";
 
 export default class Counter extends React.Component {
 	state = {
@@ -26,7 +25,14 @@ export default class Counter extends React.Component {
 			<div>
 				{counter}
 				<button onClick={this.onButtonClick}>Increase</button>
-				<AutoFocusInput onChange={this.onStepChange} value={step} type="number" />
+				<select value={step} onChange={this.onStepChange}>
+					<option value={1}>1</option>
+					<option value={2}>2</option>
+					<option value={3}>3</option>
+					<option value={4}>4</option>
+					<option value={5}>5</option>
+					<option value={6}>6</option>
+				</select>
 			</div>
 		)
 	}
