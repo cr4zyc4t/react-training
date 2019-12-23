@@ -22,7 +22,7 @@ export default class App extends React.Component {
             </nav>
 
           </header>
-          <div style={{ display: "flex", width: "100%", height: 300, justifyContent: "center", padding: 15 }}>
+          <div className="content-wrapper">
             <Switch>
               <Route exact path="/" component={() => <div>This is Homepage</div>} />
               <Route path="/counter" component={Counter} />
