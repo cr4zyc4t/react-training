@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './Counter';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,8 +26,10 @@ export default class App extends React.Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          {counter}
-          <button onClick={this.increaseCounter}>Increase</button>
+          <Counter
+            counter={counter}
+            onButtonClick={this.increaseCounter}
+          />
         </header>
       </div>
     );
