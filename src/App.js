@@ -4,6 +4,7 @@ import './App.css';
 import Counter from './Counter';
 import Clock from './Clock';
 import Greeting from './Greeting';
+import RandomList from './RandomList';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -52,6 +53,9 @@ export default class App extends React.Component {
             </div>
             <div style={{ flex: 1 }}>
               <Greeting />
+            </div>
+            <div style={{ flex: 1 }}>
+              <RandomList />
             </div>
           </div>
         </header>
