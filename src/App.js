@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Counter from './Counter';
-import Clock from './Clock';
-import Greeting from './Greeting';
-import RandomList from './RandomList';
+import Counter from './components/Counter';
+import Clock from './components/Clock';
+import Greeting from './components/Greeting';
+import RandomList from './components/RandomList';
 import { BrowserRouter as Router, NavLink, Switch, Route } from "react-router-dom";
 
 export default class App extends React.Component {
