@@ -5,61 +5,35 @@ import Counter from './Counter';
 import Clock from './Clock';
 import Greeting from './Greeting';
 import RandomList from './RandomList';
+import { BrowserRouter as Router, NavLink, Switch, Route } from "react-router-dom";
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showCounter: false,
-      showClock: false,
-    }
-  }
-
-  toggleCounter = () => {
-    this.setState({
-      showCounter: !this.state.showCounter
-    })
-  }
-
-  toggleClock = () => {
-    this.setState({
-      showClock: !this.state.showClock
-    })
-  }
-
-  counterRef = React.createRef()
-  onIncreaseCounterBtnClick = () => {
-    if (this.counterRef.current) {
-      this.counterRef.current.onButtonClick();
-    }
-  }
-
   render() {
-    const { showClock, showCounter } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div style={{ display: "flex", width: "100%", height: 100 }}>
-            <div style={{ flex: 1 }}>
-              <button onClick={this.toggleCounter}>Toggle Counter</button>
-              {showCounter ? <Counter ref={this.counterRef} /> : null}
-              <button onClick={this.onIncreaseCounterBtnClick}>Increase Counter</button>
-            </div>
-            <div style={{ flex: 1 }}>
-              <button onClick={this.toggleClock}>Toggle Clock</button>
-              {showClock ? <Clock /> : null}
-            </div>
-            <div style={{ flex: 1 }}>
-              <Greeting />
-            </div>
-            <div style={{ flex: 1 }}>
-              <RandomList />
-            </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <nav>
+              <NavLink to="/counter">Counter</NavLink>
+              <NavLink to="/clock">Click</NavLink>
+              <NavLink to="/greeting">Greeting</NavLink>
+              <NavLink to="/list">List</NavLink>
+            </nav>
+
+          </header>
+          <div style={{ display: "flex", width: "100%", height: 300, justifyContent: "center", padding: 15 }}>
+            <Switch>
+              <Route exact path="/" component={() => <div>This is Homepage</div>} />
+              <Route path="/counter" component={Counter} />
+              <Route path="/clock" component={Clock} />
+              <Route path="/greeting" component={Greeting} />
+              <Route path="/list" component={RandomList} />
+              <Route component={() => <div>Error 404 - Page not found</div>} />
+            </Switch>
           </div>
-        </header>
-      </div >
+        </div>
+      </Router>
     );
   }
 }
