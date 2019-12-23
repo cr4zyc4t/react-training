@@ -1,27 +1,32 @@
 import React from "react";
+import AutoFocusInput from "./AutoFocusInput";
 
 export default class Counter extends React.Component {
 	state = {
-		counter: 0
+		counter: 0,
+		step: 1
 	}
 
-	inputRef = React.createRef()
+	onStepChange = (e) => {
+		this.setState({
+			step: parseInt(e.target.value, 10)
+		})
+	}
 
 	onButtonClick = () => {
-		const increaseValue = parseInt(this.inputRef.current.value, 10);
 		this.setState({
-			counter: this.state.counter + increaseValue,
+			counter: this.state.counter + this.state.step,
 		})
 	}
 
 	render() {
-		const { counter } = this.state;
+		const { counter, step } = this.state;
 
 		return (
 			<div>
 				{counter}
 				<button onClick={this.onButtonClick}>Increase</button>
-				<input ref={this.inputRef} defaultValue={1} type="number" />
+				<AutoFocusInput onChange={this.onStepChange} value={step} type="number" />
 			</div>
 		)
 	}
