@@ -1,15 +1,13 @@
-import React, { Component } from "react"
+import React, { useEffect, useRef } from "react"
 
-export default class AutoFocusInput extends Component {
-	ref = React.createRef()
+export default function AutoFocusInput(props) {
+	const ref = useRef(null)
 
-	componentDidMount() {
-		this.ref.current.focus()
-	}
+	useEffect(() => {
+		ref.current.focus()
+	}, [])
 
-	render() {
-		return (
-			<input ref={this.ref} {...this.props} />
-		)
-	}
+	return (
+		<input ref={ref} {...props} />
+	)
 }

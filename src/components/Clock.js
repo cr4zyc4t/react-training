@@ -1,32 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import { useTime } from "../utils";
 
-export default class Clock extends Component {
-	state = {
-		time: new Date()
-	}
+export default function Clock() {
+	const time = useTime()
 
-	componentDidMount() {
-		this.timer = setInterval(() => {
-			this.setState({
-				time: new Date()
-			})
-		}, 1000);
-	}
-
-	componentDidUpdate() {
-		console.log(`ToanVQ: Clock -> componentDidUpdate -> componentDidUpdate`);
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.timer);
-	}
-
-	render() {
-		const { time } = this.state;
-		return (
-			<div>
-				{time.toString()}
-			</div>
-		)
-	}
+	return (
+		<div>
+			{time.toString()}
+		</div>
+	)
 }

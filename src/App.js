@@ -16,7 +16,7 @@ export default class App extends React.Component {
             <img src={logo} className="App-logo" alt="logo" />
             <nav>
               <NavLink to="/counter">Counter</NavLink>
-              <NavLink to="/clock">Click</NavLink>
+              <NavLink to="/clock">Clock</NavLink>
               <NavLink to="/greeting">Greeting</NavLink>
               <NavLink to="/list">List</NavLink>
             </nav>
