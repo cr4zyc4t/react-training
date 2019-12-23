@@ -26,6 +26,13 @@ export default class App extends React.Component {
     })
   }
 
+  counterRef = React.createRef()
+  onIncreaseCounterBtnClick = () => {
+    if (this.counterRef.current) {
+      this.counterRef.current.onButtonClick();
+    }
+  }
+
   render() {
     const { showClock, showCounter } = this.state;
     return (
@@ -35,7 +42,8 @@ export default class App extends React.Component {
           <div style={{ display: "flex", width: "100%", height: 100 }}>
             <div style={{ flex: 1 }}>
               <button onClick={this.toggleCounter}>Toggle Counter</button>
-              {showCounter ? <Counter /> : null}
+              {showCounter ? <Counter ref={this.counterRef} /> : null}
+              <button onClick={this.onIncreaseCounterBtnClick}>Increase Counter</button>
             </div>
             <div style={{ flex: 1 }}>
               <button onClick={this.toggleClock}>Toggle Clock</button>
@@ -43,7 +51,7 @@ export default class App extends React.Component {
             </div>
           </div>
         </header>
-      </div>
+      </div >
     );
   }
 }
