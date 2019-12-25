@@ -21,7 +21,7 @@ const ErrorPage = () => {
   return (
     <div className={cls['ErrorPageWrapper']}>
       <label>Error 404 - Page Not Found</label>
-      <p className={cls["message"]}>You will be redirect to <Link to="/">HomePage</Link> in {time} seconds</p>
+      <p className={cls["message"]}>You will be redirect to <Link to="/">HomePage</Link> in <span style={{ color: "red", fontWeight: "bold" }}>{time}</span> seconds</p>
     </div>
   )
 };

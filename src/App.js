@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage';
 import Counter from './pages/Counter';
 import Clock from './pages/Clock';
 import Greeting from './pages/Greeting';
+import TaskManager from './pages/TaskManager';
 
 export default class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ export default class App extends React.Component {
               <NavLink to="/counter">Counter</NavLink>
               <NavLink to="/clock">Clock</NavLink>
               <NavLink to="/greeting">Greeting</NavLink>
+              <NavLink to="/task-manager">Task Manager</NavLink>
             </nav>
           </header>
           <div className="content-wrapper">
@@ -28,6 +30,7 @@ export default class App extends React.Component {
               <Route path="/counter" component={Counter} />
               <Route path="/clock" component={Clock} />
               <Route path="/greeting" component={Greeting} />
+              <Route path="/task-manager" component={TaskManager} />
               <Route component={ErrorPage} />
             </Switch>
           </div>

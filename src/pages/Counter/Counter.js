@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import "./Counter.scss";
 
 export default function Counter() {
 	const [step, setStep] = useState(1);
@@ -13,9 +14,9 @@ export default function Counter() {
 	}
 
 	return (
-		<div>
-			{counter}
-			<button onClick={onButtonClick}>Increase</button>
+		<div className="counter-wrapper">
+			<p>{counter}</p>
+			<button onClick={onButtonClick} style={{ marginRight: 10 }}>Increase</button>
 			<select value={step} onChange={onStepChange}>
 				<option value={1}>1</option>
 				<option value={2}>2</option>
