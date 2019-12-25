@@ -1,5 +1,5 @@
 import React from "react"
-import AutoFocusInput from "./AutoFocusInput"
+import AutoFocusInput from "../../components/AutoFocusInput"
 
 export default class Greeting extends React.Component {
 	state = {
