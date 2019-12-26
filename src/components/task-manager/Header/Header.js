@@ -6,7 +6,7 @@ const Header = () => (
   <div className={cls["HeaderWrapper"]}>
     <span className={cls["title"]}>Task Manager</span>
     <span className={cls["spacer"]}></span>
-    <input className={cls["form-control"]} />
+    <input style={{ width: "auto" }} className="form-control" />
   </div>
 );
 

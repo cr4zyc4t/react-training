@@ -1,19 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
-//import { Test } from './Sidebar.styles';
+import "./Sidebar.scss";
 
 const Sidebar = (props) => (
   <div className="SidebarWrapper">
-    Test content
+    <div className="sidebar-item-container">
+      {new Array(10).fill(0).map((v, i) => {
+        return (
+          <div key={i} className={`sidebar-item ${i === 5 && "active"}`}>Item aaaaaaaaaa aaaaaaaaa{i}</div>
+        )
+      })}
+    </div>
   </div>
 );
-
-Sidebar.propTypes = {
-  // bla: PropTypes.string,
-};
-
-Sidebar.defaultProps = {
-  // bla: 'test',
-};
 
 export default Sidebar;

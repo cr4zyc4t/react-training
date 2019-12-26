@@ -6,7 +6,7 @@ export default function Clock() {
 	const time = useTime()
 
 	return (
-		<div class="clock-container">
+		<div className="clock-container">
 			{time.toString()}
 		</div>
 	)
